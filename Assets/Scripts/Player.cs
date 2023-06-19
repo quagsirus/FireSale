@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         {
             if (_direction == value) return;
             _direction = value;
-            OnDirectionChanged(value);
+            _animator.SetInteger(AnimatorDirection, (int)value);
         }
     }
 
@@ -53,11 +53,6 @@ public class Player : MonoBehaviour
 
             // Actually move, accounting for frame times and walk speed
             _rigidbody2D.MovePosition(_rigidbody2D.position + finalMovement * (Time.deltaTime * Speed));
-    }
-
-    private void OnDirectionChanged(Direction direction)
-    {
-        _animator.SetInteger(AnimatorDirection, (int)direction);
     }
 
     private enum Direction
