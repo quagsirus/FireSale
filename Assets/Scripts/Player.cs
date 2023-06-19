@@ -41,10 +41,10 @@ public class Player : MonoBehaviour
             // Get facing direction based on angle of movement
             CurrentDirection = Vector2.SignedAngle(Vector2.up, finalMovement) switch
             {
-                < -135 or > 135 => Direction.Up,
+                < -135 or > 135 => Direction.Down,
                 >= 45 => Direction.Right,
                 <= -45 => Direction.Left,
-                _ => Direction.Down
+                _ => Direction.Up
             };
 
             // Actually move, accounting for frame times and walk speed
