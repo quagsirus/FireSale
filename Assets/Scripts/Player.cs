@@ -5,6 +5,9 @@ public class Player : MonoBehaviour
     // Constant modifiers
     private const float Speed = 1f;
 
+    // Rigidbody for solid collision detection and movement
+    private Rigidbody2D _rigidbody2D;
+
     // Animator and parameters
     private static readonly int AnimatorDirection = Animator.StringToHash("Direction");
 
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _animator = gameObject.GetComponent<Animator>();
+        _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -48,7 +52,7 @@ public class Player : MonoBehaviour
             };
 
             // Actually move, accounting for frame times and walk speed
-            transform.Translate((Vector3)finalMovement * (Time.deltaTime * Speed), Space.World);
+            _rigidbody2D.MovePosition(_rigidbody2D.position + finalMovement * (Time.deltaTime * Speed));
     }
 
     private void OnDirectionChanged(Direction direction)
