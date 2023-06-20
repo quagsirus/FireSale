@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        // Cache player components on spawn
         _animator = gameObject.GetComponent<Animator>();
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
     }
@@ -86,6 +87,7 @@ public class Player : MonoBehaviour
         _rigidbody2D.MovePosition(_rigidbody2D.position + finalMovement * (Time.deltaTime * Speed));
     }
 
+    // Enumerators for controlling animator parameters
     private enum Direction
     {
         Down,
