@@ -44,6 +44,15 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""primaryFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c7213b3-e916-412b-b1ea-39e0b81dc296"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -60,34 +69,12 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fc648f7a-e819-411e-9ee4-879d845800e4"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""dbb912d7-8ab1-4048-b616-25bbdb0eae74"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""180ccffb-fe99-4dbc-b445-2c2c40e4276c"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -145,6 +132,50 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""action"": ""movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""180ccffb-fe99-4dbc-b445-2c2c40e4276c"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ea7f50b-af4c-4494-baff-12557f395141"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""primaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea4d3de1-7fd4-4821-b1aa-a19cd2edfcee"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""primaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3f1f690-fada-4e23-834d-7e25d64004fa"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""primaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -155,6 +186,7 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         m_gameplay = asset.FindActionMap("gameplay", throwIfNotFound: true);
         m_gameplay_interact = m_gameplay.FindAction("interact", throwIfNotFound: true);
         m_gameplay_movement = m_gameplay.FindAction("movement", throwIfNotFound: true);
+        m_gameplay_primaryFire = m_gameplay.FindAction("primaryFire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -218,12 +250,14 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_gameplay_interact;
     private readonly InputAction m_gameplay_movement;
+    private readonly InputAction m_gameplay_primaryFire;
     public struct GameplayActions
     {
         private @GameActions m_Wrapper;
         public GameplayActions(@GameActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @interact => m_Wrapper.m_gameplay_interact;
         public InputAction @movement => m_Wrapper.m_gameplay_movement;
+        public InputAction @primaryFire => m_Wrapper.m_gameplay_primaryFire;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -239,6 +273,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @movement.started += instance.OnMovement;
             @movement.performed += instance.OnMovement;
             @movement.canceled += instance.OnMovement;
+            @primaryFire.started += instance.OnPrimaryFire;
+            @primaryFire.performed += instance.OnPrimaryFire;
+            @primaryFire.canceled += instance.OnPrimaryFire;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -249,6 +286,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @movement.started -= instance.OnMovement;
             @movement.performed -= instance.OnMovement;
             @movement.canceled -= instance.OnMovement;
+            @primaryFire.started -= instance.OnPrimaryFire;
+            @primaryFire.performed -= instance.OnPrimaryFire;
+            @primaryFire.canceled -= instance.OnPrimaryFire;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -270,5 +310,6 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     {
         void OnInteract(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
+        void OnPrimaryFire(InputAction.CallbackContext context);
     }
 }
