@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Constant modifiers
-    private const float Speed = 1f;
+    private const float Speed = 2f;
 
     // Animator and parameters
     private static readonly int AnimatorCurrentDirection = Animator.StringToHash("CurrentDirection");
@@ -72,20 +72,18 @@ public class Player : MonoBehaviour
         CurrentState = isMoving ? CurrentState | State.Running : CurrentState & ~State.Running;
 
         // Avoid unnecessary calculations
-        if (isMoving)
+        if (!isMoving) return;
+        // Get facing direction based on angle of movement
+        CurrentDirection = Vector2.SignedAngle(Vector2.up, finalMovement) switch
         {
-            // Get facing direction based on angle of movement
-            CurrentDirection = Vector2.SignedAngle(Vector2.up, finalMovement) switch
-            {
-                < -135 or > 135 => Direction.Down,
-                >= 45 => Direction.Right,
-                <= -45 => Direction.Left,
-                _ => Direction.Up
-            };
+            < -135 or > 135 => Direction.Down,
+            >= 45 => Direction.Right,
+            <= -45 => Direction.Left,
+            _ => Direction.Up
+        };
 
-            // Actually move, accounting for frame times and walk speed
-            _rigidbody2D.MovePosition(_rigidbody2D.position + finalMovement * (Time.deltaTime * Speed));
-        }
+        // Actually move, accounting for frame times and walk speed
+        _rigidbody2D.MovePosition(_rigidbody2D.position + finalMovement * (Time.deltaTime * Speed));
     }
 
     private enum Direction
