@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Player : MonoBehaviour
     private static readonly int AnimatorDirection = Animator.StringToHash("Direction");
     private static readonly int AnimatorHolding = Animator.StringToHash("Holding");
     private static readonly int AnimatorRunning = Animator.StringToHash("Running");
+
+    // Actions wrapper instance field
+    private GameActions _actions;
 
     private Animator _animator;
 
@@ -56,6 +60,11 @@ public class Player : MonoBehaviour
         // Cache player components on spawn
         _animator = gameObject.GetComponent<Animator>();
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+        // Instantiate game actions wrapper class
+        _actions = new GameActions();
+        // Bind interact function to event
+        _actions.gameplay.interact.performed += OnInteract;
     }
 
     private void Update()
@@ -64,18 +73,17 @@ public class Player : MonoBehaviour
         _animator.SetInteger(AnimatorCurrentDirection, _animator.GetInteger(AnimatorDirection));
 
         // Get player inputs and create vector
-        var inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        // Clamp to length of 1 otherwise diagonal input would be 40% faster
-        var finalMovement = Vector2.ClampMagnitude(inputDirection, 1.0f);
+        // Input System clamps magnitude to 1 otherwise diagonal input would be 40% faster
+        var inputDirection = _actions.gameplay.movement.ReadValue<Vector2>();
 
         // Check if moving and send to animator state
-        var isMoving = finalMovement != Vector2.zero;
+        var isMoving = inputDirection != Vector2.zero;
         CurrentState = isMoving ? CurrentState | State.Running : CurrentState & ~State.Running;
 
         // Avoid unnecessary calculations
         if (!isMoving) return;
         // Get facing direction based on angle of movement
-        CurrentDirection = Vector2.SignedAngle(Vector2.up, finalMovement) switch
+        CurrentDirection = Vector2.SignedAngle(Vector2.up, inputDirection) switch
         {
             < -135 or > 135 => Direction.Down,
             >= 45 => Direction.Right,
@@ -84,7 +92,22 @@ public class Player : MonoBehaviour
         };
 
         // Actually move, accounting for frame times and walk speed
-        _rigidbody2D.MovePosition(_rigidbody2D.position + finalMovement * (Time.deltaTime * Speed));
+        _rigidbody2D.MovePosition(_rigidbody2D.position + inputDirection * (Time.deltaTime * Speed));
+    }
+
+    private void OnEnable()
+    {
+        _actions.gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _actions.gameplay.Disable();
+    }
+
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        Debug.Log("Interact!");
     }
 
     // Enumerators for controlling animator parameters
