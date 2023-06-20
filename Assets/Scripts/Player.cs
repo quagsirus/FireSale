@@ -5,24 +5,27 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     // Constant modifiers
-    private const float Speed = 2f;
+    private const float Speed = 5f;
 
-    // Animator and parameters
+    // Animator parameter id caches
     private static readonly int AnimatorCurrentDirection = Animator.StringToHash("CurrentDirection");
     private static readonly int AnimatorDirection = Animator.StringToHash("Direction");
     private static readonly int AnimatorHolding = Animator.StringToHash("Holding");
     private static readonly int AnimatorRunning = Animator.StringToHash("Running");
 
-    // Actions wrapper instance field
+    // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
 
+    // Animator component (assigned on Awake)
     private Animator _animator;
 
-    // Parameters for use in animation
+    // Last movement direction (4 way)
     private Direction _direction;
 
     // Rigidbody for solid collision detection and movement
     private Rigidbody2D _rigidbody2D;
+
+    // Animation state
     private State _state;
 
     private Direction CurrentDirection
@@ -97,15 +100,17 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
+        // Start capturing input defined in gameplay map
         _actions.gameplay.Enable();
     }
 
     private void OnDisable()
     {
+        // Stop capturing input defined in gameplay map
         _actions.gameplay.Disable();
     }
 
-    private void OnInteract(InputAction.CallbackContext context)
+    private static void OnInteract(InputAction.CallbackContext context)
     {
         Debug.Log("Interact!");
     }
