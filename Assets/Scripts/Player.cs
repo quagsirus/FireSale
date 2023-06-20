@@ -127,7 +127,6 @@ public class Player : MonoBehaviour
     [Flags]
     private enum State
     {
-        Idle = 0,
         Running = 1,
         Holding = 2
     }
