@@ -1,14 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 public class AgentController : MonoBehaviour
 {
     // Aggressive flag (true for player tracking, false for chicken running)
     public bool aggressive;
 
-    // Timer for wander repositioning
-    private float _wanderTimer;
+    // Wander behavior configuration
     public float wanderRepositionDelay;
     public float wanderMaxDistance;
 
@@ -20,6 +18,9 @@ public class AgentController : MonoBehaviour
 
     // Assigned to the player's transform in OnPlayerEnteredArea
     private Transform _playerTransform;
+
+    // Timer for wander repositioning
+    private float _wanderTimer;
 
     private void Awake()
     {
@@ -38,7 +39,10 @@ public class AgentController : MonoBehaviour
         // If agent should be moving towards player to attack
         if (aggressive)
             // Update destination to current player position
+        {
             _navMeshAgent.destination = _playerTransform.position;
+        }
+        // If agent should chicken run instead
         else if (_wanderTimer > wanderRepositionDelay)
         {
             // Cache current position as we'll be accessing it lots in this loop
@@ -53,7 +57,7 @@ public class AgentController : MonoBehaviour
                 // Check if this is a valid location on the NavMesh
                 NavMesh.SamplePosition(new Vector3(randomLocation.x, randomLocation.y, 0), out hit, 0.5f, -1);
             }
-            
+
             // Update target destination to new random hit
             _navMeshAgent.destination = hit.position;
 
@@ -62,7 +66,9 @@ public class AgentController : MonoBehaviour
         }
         else
             // Increment timer for wander repositioning
+        {
             _wanderTimer += Time.deltaTime;
+        }
 
         // Update current agent position to calculated next location, without z axis
         var nextPosition = _navMeshAgent.nextPosition;
