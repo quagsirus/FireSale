@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
 
-    // Animator component (assigned on Awake)
+    // Animator component (located on Awake)
     private Animator _animator;
 
     // Last movement direction (4 way)
