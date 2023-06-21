@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
-
-    // Animator component (instantiated on Awake)
+    
+    // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
 
     // Rigidbody for solid collision detection and movement
@@ -17,8 +17,10 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        // Cache player components on spawn
+        // Instantiate AnimationStateController
         _animationStateController = new AnimationStateController(gameObject.GetComponent<Animator>());
+
+        // Cache Rigidbody2D component on spawn
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
 
         // Instantiate game actions wrapper class

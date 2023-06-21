@@ -9,6 +9,9 @@ public class AgentController : MonoBehaviour
     // Wander behavior configuration
     public float wanderRepositionDelay;
     public float wanderMaxDistance;
+    
+    // AnimationStateController (instantiated on Awake)
+    private AnimationStateController _animationStateController;
 
     // NavMeshAgent component (located on Awake)
     private NavMeshAgent _navMeshAgent;
@@ -29,25 +32,28 @@ public class AgentController : MonoBehaviour
 
         // Prevent unity updating our position, because it's designed for 3d it moves us on the z axis
         _navMeshAgent.updatePosition = false;
+        
+        // Instantiate AnimationStateController
+        _animationStateController = new AnimationStateController(gameObject.GetComponent<Animator>());
     }
 
     private void Update()
     {
         // Remain dormant until player has been spotted
         if (!_playerSpotted) return;
+        
+        // Cache current position as we'll be accessing it at least once and multiple times in some cases
+        var position = transform.position;
 
         // If agent should be moving towards player to attack
         if (aggressive)
-            // Update destination to current player position
         {
+            // Update destination to current player position
             _navMeshAgent.destination = _playerTransform.position;
         }
         // If agent should chicken run instead
         else if (_wanderTimer > wanderRepositionDelay)
         {
-            // Cache current position as we'll be accessing it lots in this loop
-            var position = transform.position;
-
             // Keep generating random locations until we get a valid hit
             NavMeshHit hit = default;
             while (!hit.hit)
@@ -70,6 +76,10 @@ public class AgentController : MonoBehaviour
             _wanderTimer += Time.deltaTime;
         }
 
+        // Update animation movement direction
+        _animationStateController.SetMovementDirection(_navMeshAgent.nextPosition - position);
+        // Update running/idle state based on if stopping distance has been reached
+        _animationStateController.SetRunningState(_navMeshAgent.stoppingDistance < _navMeshAgent.remainingDistance);
         // Update current agent position to calculated next location, without z axis
         var nextPosition = _navMeshAgent.nextPosition;
         transform.position = new Vector3(nextPosition.x, nextPosition.y, 0);
