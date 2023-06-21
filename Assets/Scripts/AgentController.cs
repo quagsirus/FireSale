@@ -65,8 +65,8 @@ public class AgentController : MonoBehaviour
             _wanderTimer = 0;
         }
         else
-            // Increment timer for wander repositioning
         {
+            // Increment timer for wander repositioning
             _wanderTimer += Time.deltaTime;
         }
 
