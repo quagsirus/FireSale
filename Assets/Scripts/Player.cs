@@ -89,8 +89,8 @@ public class Player : MonoBehaviour
         CurrentDirection = Vector2.SignedAngle(Vector2.up, inputDirection) switch
         {
             < -135 or > 135 => Direction.Down,
-            >= 45 => Direction.Right,
-            <= -45 => Direction.Left,
+            >= 45 => Direction.Left,
+            <= -45 => Direction.Right,
             _ => Direction.Up
         };
 
