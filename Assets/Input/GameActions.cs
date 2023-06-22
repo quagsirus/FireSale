@@ -206,6 +206,45 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""cutscene"",
+            ""id"": ""1b0ac630-d81b-46de-8120-75adc7740d29"",
+            ""actions"": [
+                {
+                    ""name"": ""displayNextLine"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff9065d2-0e1a-438f-9e35-7dc2a4647c48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fc3b7a4b-4de7-41b9-ac07-619202242ce7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""displayNextLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""076eb4cf-7ba6-430b-93d1-c37aa944d9d2"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""displayNextLine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -218,6 +257,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         // pause
         m_pause = asset.FindActionMap("pause", throwIfNotFound: true);
         m_pause_openPauseMenu = m_pause.FindAction("openPauseMenu", throwIfNotFound: true);
+        // cutscene
+        m_cutscene = asset.FindActionMap("cutscene", throwIfNotFound: true);
+        m_cutscene_displayNextLine = m_cutscene.FindAction("displayNextLine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -383,6 +425,52 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         }
     }
     public PauseActions @pause => new PauseActions(this);
+
+    // cutscene
+    private readonly InputActionMap m_cutscene;
+    private List<ICutsceneActions> m_CutsceneActionsCallbackInterfaces = new List<ICutsceneActions>();
+    private readonly InputAction m_cutscene_displayNextLine;
+    public struct CutsceneActions
+    {
+        private @GameActions m_Wrapper;
+        public CutsceneActions(@GameActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @displayNextLine => m_Wrapper.m_cutscene_displayNextLine;
+        public InputActionMap Get() { return m_Wrapper.m_cutscene; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CutsceneActions set) { return set.Get(); }
+        public void AddCallbacks(ICutsceneActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CutsceneActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CutsceneActionsCallbackInterfaces.Add(instance);
+            @displayNextLine.started += instance.OnDisplayNextLine;
+            @displayNextLine.performed += instance.OnDisplayNextLine;
+            @displayNextLine.canceled += instance.OnDisplayNextLine;
+        }
+
+        private void UnregisterCallbacks(ICutsceneActions instance)
+        {
+            @displayNextLine.started -= instance.OnDisplayNextLine;
+            @displayNextLine.performed -= instance.OnDisplayNextLine;
+            @displayNextLine.canceled -= instance.OnDisplayNextLine;
+        }
+
+        public void RemoveCallbacks(ICutsceneActions instance)
+        {
+            if (m_Wrapper.m_CutsceneActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICutsceneActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CutsceneActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CutsceneActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CutsceneActions @cutscene => new CutsceneActions(this);
     public interface IGameplayActions
     {
         void OnInteract(InputAction.CallbackContext context);
@@ -392,5 +480,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     public interface IPauseActions
     {
         void OnOpenPauseMenu(InputAction.CallbackContext context);
+    }
+    public interface ICutsceneActions
+    {
+        void OnDisplayNextLine(InputAction.CallbackContext context);
     }
 }

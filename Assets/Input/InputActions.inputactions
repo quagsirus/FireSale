@@ -184,6 +184,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "cutscene",
+            "id": "1b0ac630-d81b-46de-8120-75adc7740d29",
+            "actions": [
+                {
+                    "name": "displayNextLine",
+                    "type": "Button",
+                    "id": "ff9065d2-0e1a-438f-9e35-7dc2a4647c48",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc3b7a4b-4de7-41b9-ac07-619202242ce7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "displayNextLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "076eb4cf-7ba6-430b-93d1-c37aa944d9d2",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "displayNextLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
