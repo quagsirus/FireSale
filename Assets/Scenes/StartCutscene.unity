@@ -177,7 +177,7 @@ MonoBehaviour:
     cat bed cost you just- OUEGh-AcK-sPLAT-'
   - 'TTortoise: it cost you- acKCkfek- ouHGEog-'
   - 'TTortoise: it cost- ACKOUGHACAHGIGH-'
-  - PYou wait for the tortoise to try and finish his sentence with a vacant expression
+  - _You wait for the tortoise to try and finish his sentence with a vacant expression
     due to the coughing and splattering he is projecting towards you
   - 'TTortoise: AHEM- as I was saying...'
   - 'TTortoise: the ultra-deluxe-extra-ultimate-incredible-remastered cat bed would
@@ -187,8 +187,25 @@ MonoBehaviour:
   - 'TTortoise:   C U R S E   Y O U   I N F L A T I O N ! ! !'
   - 'TTortoise: oh well, those were the time of old i suppose and it''s impossible
     to go back...'
-  characterIndicators: 5f0054005000
-  characterSprite: []
+  - _As the old tortoise is lamenting about the current state of the economy, you
+    look behind him and see a poster on the window...
+  - '_The text on the poster reads:'
+  - _WITNESS THE FUTURE OF SCIENCE! OR PERHAPS THE PAST!? STAR TECHNOLOGIES UNVIEL
+    THEIR LATEST INNOVATION, A GUN THAT CAN SEND YOU THROUGH TIME!
+  - '_Upon further inspection there appears to be a fine print:'
+  - _only 1 time travel gun in existence, health warnings will apply, use at your
+    own risk, Star Technologies are not liable for any world altering events you
+    may cause, currently stored at the one and only Star Technologies HQ, conveniently
+    located next to your trusty local corner shop, Ts and Cs apply
+  - _you look to the building beside the old tortoise (who is now giving you lecture
+    on the state of the government)
+  - _sure enough, there it is, Star Technologies HQ!
+  - _you reach into your pocket to grab some gum and realise you never bought it
+    in the first place
+  - _oh well, you think to yourself, 'it'll be cheaper where i'm going anyway...'
+  - _you make your way to Star Technologies HQ
+  characterIndicators: 5f005400
+  characterSprites: []
 --- !u!4 &30008362
 Transform:
   m_ObjectHideFlags: 0
