@@ -1445,6 +1445,7 @@ MonoBehaviour:
   deadIcon: {fileID: 21300000, guid: 25468f71ae43a4543bac805ed7649b2e, type: 3}
   healthPanel: {fileID: 8399603900637804449}
   gameOverPanel: {fileID: 5029346719171585891}
+  winPanel: {fileID: 5539874747569755633}
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 24576
