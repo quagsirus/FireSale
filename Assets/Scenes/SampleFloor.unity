@@ -1284,7 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072553453}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AreaTriggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2388,7 @@ TilemapCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1025
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

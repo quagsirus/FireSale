@@ -1,13 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     // Constant modifiers
-    private const float Speed = 10f;
+    private const float Speed = 5f;
 
+    // Location that ammo is spawned relative to player pivot
     public Vector2 ammoOffsetVector;
-
     // The object instantiated on fire
     public GameObject ammoType;
 
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
 
     // Rigidbody for solid collision detection and movement
     private Rigidbody2D _rigidbody2D;
+    // Vector2 storing current movement input
+    private Vector2 _movementVector2;
 
     private void Awake()
     {
@@ -40,22 +43,26 @@ public class Player : MonoBehaviour
     {
         // Stop animator locking up
         _animationStateController.FixDirectionLockup();
-
-        // Get player inputs and create vector
+        
+        // Get player inputs and set Vector2
         // Input System clamps magnitude to 1 otherwise diagonal input would be 40% faster
-        var movementVector2 = _actions.gameplay.movement.ReadValue<Vector2>();
+        _movementVector2 = _actions.gameplay.movement.ReadValue<Vector2>();
 
         // Check if moving and send to animation state controller
-        var isMoving = movementVector2 != Vector2.zero;
+        var isMoving = _movementVector2 != Vector2.zero;
         _animationStateController.SetRunningState(isMoving);
 
         // Avoid unnecessary calculations when no change to position needs to be made
         if (!isMoving) return;
 
         // Update animation movement direction
-        _animationStateController.SetMovementDirection(movementVector2);
+        _animationStateController.SetMovementDirection(_movementVector2);
+    }
+
+    private void FixedUpdate()
+    {
         // Actually move, accounting for frame times and walk speed
-        _rigidbody2D.MovePosition(_rigidbody2D.position + movementVector2 * (Time.deltaTime * Speed));
+        _rigidbody2D.MovePosition(_rigidbody2D.position + _movementVector2 * (Time.deltaTime * Speed));
     }
 
     private void OnEnable()

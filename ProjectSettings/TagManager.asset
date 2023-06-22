@@ -11,11 +11,11 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - EnemyBullet
+  - AgentBullet
   - PlayerBullet
   - HitDetect
-  - 
-  - 
+  - AreaTrigger
+  - Player
   - 
   - 
   - 
