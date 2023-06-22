@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (interactedWithObject.gameObject.CompareTag("ElevatorOpen") && _hasKeycard)
+        else if (interactedWithObject.gameObject.CompareTag("ElevatorSummon") && _hasKeycard)
         {
             interactedWithObject.gameObject.GetComponent<SpriteRenderer>().sprite = openElevatorSprite;
             interactedWithObject.gameObject.GetComponent<BoxCollider2D>().enabled = false;

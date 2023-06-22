@@ -60,7 +60,7 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 24576
-  openElevatorSprite: {fileID: 0}
+  openElevatorSprite: {fileID: -557923997, guid: b5d4291b4c170464ba31b09b96b52bd5, type: 3}
 --- !u!95 &3481516852641054777
 Animator:
   serializedVersion: 7
