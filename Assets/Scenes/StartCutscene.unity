@@ -149,8 +149,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0285b9deb6938744b16e3c083487b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLines: []
-  characterIndicators: 
+  dialogueLines:
+  - _It's a sunny Tuesday morning and you've decided to go to the local corner shop
+    to buy some gum
+  - _You browse the shelves and pick out your gum but as you head to the counter
+    to buy it, you see it...
+  - _The thing you've been dreaming of... the thing you've been desperately saving
+    up your money in the hopes of one day buying...
+  - _The ultra-deluxe-extra-ultimate-incredible-remastered cat bed!!!
+  - _You pick it up, disbelief that it is finally within your grasp
+  - _With the ultra-deluxe-extra-ultimate-incredible-remastered cat bed in hand,
+    you approach the person at the counter
+  - '_[BEEP]'
+  - '_Cashier: That''ll be 7 dabloons'
+  - _You open your wallet
+  - _6 dabloons roll out of it...
+  - _The cashier looks at the coins and then looks at you with the same expression
+    as a waiter watching your card decline in a restaurant
+  - _The cashier then slowly slides the ultra-deluxe-extra-ultimate-incredible-remastered
+    cat bed away from you
+  - _Begrudgingly, you leave the store
+  - '_Mysterious voice: AHEM-'
+  - _???
+  - '_Mysterious voice: You know...'
+  - _You turn around to see a rather old looking tortoise standing by the door
+  - 'TTortoise: back in my day, the ultra-deluxe-extra-ultimate-incredible-remastered
+    cat bed cost you just- OUEGh-AcK-sPLAT-'
+  - 'TTortoise: it cost you- acKCkfek- ouHGEog-'
+  - 'TTortoise: it cost- ACKOUGHACAHGIGH-'
+  - PYou wait for the tortoise to try and finish his sentence with a vacant expression
+    due to the coughing and splattering he is projecting towards you
+  - 'TTortoise: AHEM- as I was saying...'
+  - 'TTortoise: the ultra-deluxe-extra-ultimate-incredible-remastered cat bed would
+    cost you just 3 dabloons back when I was a child'
+  - 'TTortoise: they say the price was at an all time low and that it will only continue
+    to increase as time goes on...'
+  - 'TTortoise:   C U R S E   Y O U   I N F L A T I O N ! ! !'
+  - 'TTortoise: oh well, those were the time of old i suppose and it''s impossible
+    to go back...'
+  characterIndicators: 5f0054005000
   characterSprite: []
 --- !u!4 &30008362
 Transform:
