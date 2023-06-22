@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Cutscene : MonoBehaviour
@@ -42,6 +43,11 @@ public class Cutscene : MonoBehaviour
 
     private void ParseNextLine(InputAction.CallbackContext context)
     {
+        if (_nextPosition >= dialogueLines.Length)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            return;
+        }
         var nextLine = dialogueLines[_nextPosition];
         var nextLineSpriteCode = nextLine[0];
         var nextLineSpriteIndex = Array.IndexOf(characterIndicators, nextLineSpriteCode);
