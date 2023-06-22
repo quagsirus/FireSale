@@ -78,8 +78,7 @@ public class Player : MonoBehaviour
     private void OnPrimaryFire(InputAction.CallbackContext context)
     {
         _animationStateController.SetHoldingState(true);
-        Instantiate(ammoType, ammoOffsetVector + (Vector2)transform.position,
-            Quaternion.LookRotation(_animationStateController.GetFacingVector2()));
+        Instantiate(ammoType, ammoOffsetVector + (Vector2)transform.position, Quaternion.Euler(0, 0, Vector2.Angle(Vector2.left, _animationStateController.GetFacingVector2())));
     }
 
     public void OnShot()

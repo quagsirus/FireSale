@@ -11,9 +11,9 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - Bullet
-  - 
-  - 
+  - EnemyBullet
+  - PlayerBullet
+  - HitDetect
   - 
   - 
   - 

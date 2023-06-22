@@ -13,14 +13,15 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.transform.TryGetComponent<Player>(out var otherPlayer))
+        if (other.transform.parent.TryGetComponent<Player>(out var otherPlayer))
         {
             otherPlayer.OnShot();
         }
-        else if (other.transform.TryGetComponent<AgentController>(out var otherAgent))
+        else if (other.transform.parent.TryGetComponent<AgentController>(out var otherAgent))
         {
             otherAgent.OnShot();
         }
+        Debug.Log(other.gameObject);
         Destroy(gameObject);
     }
 }

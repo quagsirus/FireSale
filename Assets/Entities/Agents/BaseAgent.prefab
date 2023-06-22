@@ -34,7 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4708735149433384706}
+  - {fileID: 283372896281140237}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -212,7 +212,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &7576611104548588856
+--- !u!1001 &3140117412707761719
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -222,7 +222,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 92765633019268182, guid: fcb80693fd004b144b752c0b56df8271, type: 3}
       propertyPath: m_Name
-      value: HitDetect
+      value: AgentHitDetect
       objectReference: {fileID: 0}
     - target: {fileID: 2917573910758777402, guid: fcb80693fd004b144b752c0b56df8271, type: 3}
       propertyPath: m_RootOrder
@@ -273,8 +273,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcb80693fd004b144b752c0b56df8271, type: 3}
---- !u!4 &4708735149433384706 stripped
+--- !u!4 &283372896281140237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2917573910758777402, guid: fcb80693fd004b144b752c0b56df8271, type: 3}
-  m_PrefabInstance: {fileID: 7576611104548588856}
+  m_PrefabInstance: {fileID: 3140117412707761719}
   m_PrefabAsset: {fileID: 0}
