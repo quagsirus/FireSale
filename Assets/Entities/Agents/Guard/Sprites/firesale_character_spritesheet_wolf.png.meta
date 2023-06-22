@@ -1,0 +1,762 @@
+fileFormatVersion: 2
+guid: a200cb5913ba23b4cb17f3a38dedbf82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4110704354150335182
+    second: firesale_character_spritesheet_wolf_0
+  - first:
+      213: 6838864895758863086
+    second: firesale_character_spritesheet_wolf_1
+  - first:
+      213: 557187244925365684
+    second: firesale_character_spritesheet_wolf_2
+  - first:
+      213: 7156805213422648804
+    second: firesale_character_spritesheet_wolf_3
+  - first:
+      213: 3474269174032133951
+    second: firesale_character_spritesheet_wolf_4
+  - first:
+      213: 1743073778634099979
+    second: firesale_character_spritesheet_wolf_5
+  - first:
+      213: -492288405930553363
+    second: firesale_character_spritesheet_wolf_6
+  - first:
+      213: -6651605078877735030
+    second: firesale_character_spritesheet_wolf_7
+  - first:
+      213: -8540370527948807444
+    second: firesale_character_spritesheet_wolf_8
+  - first:
+      213: 8632574600263523963
+    second: firesale_character_spritesheet_wolf_9
+  - first:
+      213: -2855488967090703668
+    second: firesale_character_spritesheet_wolf_10
+  - first:
+      213: -9112298537153633057
+    second: firesale_character_spritesheet_wolf_11
+  - first:
+      213: 2377438607992238713
+    second: firesale_character_spritesheet_wolf_12
+  - first:
+      213: -7623823195016175246
+    second: firesale_character_spritesheet_wolf_13
+  - first:
+      213: 6141291096828966928
+    second: firesale_character_spritesheet_wolf_14
+  - first:
+      213: 7454937328903396297
+    second: firesale_character_spritesheet_wolf_15
+  - first:
+      213: -7348202645328931686
+    second: firesale_character_spritesheet_wolf_16
+  - first:
+      213: 8212207525719503996
+    second: firesale_character_spritesheet_wolf_17
+  - first:
+      213: -6268600367348899595
+    second: firesale_character_spritesheet_wolf_18
+  - first:
+      213: 3230828807331924812
+    second: firesale_character_spritesheet_wolf_19
+  - first:
+      213: -6431659001198942721
+    second: firesale_character_spritesheet_wolf_20
+  - first:
+      213: -1057458137064576632
+    second: firesale_character_spritesheet_wolf_21
+  - first:
+      213: -9076996144433533662
+    second: firesale_character_spritesheet_wolf_22
+  - first:
+      213: 3508313211626145937
+    second: firesale_character_spritesheet_wolf_23
+  - first:
+      213: 2560242467347763489
+    second: firesale_character_spritesheet_wolf_24
+  - first:
+      213: -8467379628397128296
+    second: firesale_character_spritesheet_wolf_25
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec248c5a4d72c0930800000000000000
+      internalID: 4110704354150335182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 960
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea889a836788ee50800000000000000
+      internalID: 6838864895758863086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_2
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 960
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bda72fd8d68bb700800000000000000
+      internalID: 557187244925365684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_3
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 960
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed78b85c64125360800000000000000
+      internalID: 7156805213422648804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_4
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 960
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f66440865173030800000000000000
+      internalID: 3474269174032133951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_5
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 960
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d88c0dd54a03810800000000000000
+      internalID: 1743073778634099979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def47759d4a0b29f0800000000000000
+      internalID: -492288405930553363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_7
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 720
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87fe472c60c0b3a0800000000000000
+      internalID: -6651605078877735030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_8
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 720
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2656fe0428a7980800000000000000
+      internalID: -8540370527948807444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_9
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 720
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e54c19cd01dc770800000000000000
+      internalID: 8632574600263523963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_10
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 720
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2f288d9e34f58d0800000000000000
+      internalID: -2855488967090703668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_11
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 720
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd465ad62cc9a8180800000000000000
+      internalID: -9112298537153633057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9723da851db5ef020800000000000000
+      internalID: 2377438607992238713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_13
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 480
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2716da6623db23690800000000000000
+      internalID: -7623823195016175246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_14
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 480
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01872c0f6bf3a3550800000000000000
+      internalID: 6141291096828966928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_15
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 480
+        width: 165
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb1610b002457760800000000000000
+      internalID: 7454937328903396297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_16
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 480
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94559360a0f50a90800000000000000
+      internalID: -7348202645328931686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_17
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 480
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74fc480c3f97f170800000000000000
+      internalID: 8212207525719503996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f02949ad257109a0800000000000000
+      internalID: -6268600367348899595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_19
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 240
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b4e1fbea536dc20800000000000000
+      internalID: 3230828807331924812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_20
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 240
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5e71df6382eb6a0800000000000000
+      internalID: -6431659001198942721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_21
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 240
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8896b6f4d672351f0800000000000000
+      internalID: -1057458137064576632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_22
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 240
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22de27f3918080280800000000000000
+      internalID: -9076996144433533662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_23
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 240
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19849c3374800b030800000000000000
+      internalID: 3508313211626145937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121122595fec78320800000000000000
+      internalID: 2560242467347763489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_character_spritesheet_wolf_25
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 165
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 895920f0713dd7a80800000000000000
+      internalID: -8467379628397128296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 44f2a563f775cf344b34d0b4c0816d9c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      firesale_character_spritesheet_wolf_0: 4110704354150335182
+      firesale_character_spritesheet_wolf_1: 6838864895758863086
+      firesale_character_spritesheet_wolf_10: -2855488967090703668
+      firesale_character_spritesheet_wolf_11: -9112298537153633057
+      firesale_character_spritesheet_wolf_12: 2377438607992238713
+      firesale_character_spritesheet_wolf_13: -7623823195016175246
+      firesale_character_spritesheet_wolf_14: 6141291096828966928
+      firesale_character_spritesheet_wolf_15: 7454937328903396297
+      firesale_character_spritesheet_wolf_16: -7348202645328931686
+      firesale_character_spritesheet_wolf_17: 8212207525719503996
+      firesale_character_spritesheet_wolf_18: -6268600367348899595
+      firesale_character_spritesheet_wolf_19: 3230828807331924812
+      firesale_character_spritesheet_wolf_2: 557187244925365684
+      firesale_character_spritesheet_wolf_20: -6431659001198942721
+      firesale_character_spritesheet_wolf_21: -1057458137064576632
+      firesale_character_spritesheet_wolf_22: -9076996144433533662
+      firesale_character_spritesheet_wolf_23: 3508313211626145937
+      firesale_character_spritesheet_wolf_24: 2560242467347763489
+      firesale_character_spritesheet_wolf_25: -8467379628397128296
+      firesale_character_spritesheet_wolf_3: 7156805213422648804
+      firesale_character_spritesheet_wolf_4: 3474269174032133951
+      firesale_character_spritesheet_wolf_5: 1743073778634099979
+      firesale_character_spritesheet_wolf_6: -492288405930553363
+      firesale_character_spritesheet_wolf_7: -6651605078877735030
+      firesale_character_spritesheet_wolf_8: -8540370527948807444
+      firesale_character_spritesheet_wolf_9: 8632574600263523963
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
