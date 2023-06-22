@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Cutscene : MonoBehaviour
 {
@@ -11,18 +12,22 @@ public class Cutscene : MonoBehaviour
 
     private GameActions _actions;
 
-    private TextMeshProUGUI _dialogueTextBox;
+    private TextMeshProUGUI _dialogueText;
 
     private int _nextPosition;
-    private SpriteRenderer _portraitSpriteRenderer;
+    public Image portraitImage;
 
     private void Awake()
     {
         _actions = new GameActions();
         _actions.cutscene.displayNextLine.performed += ParseNextLine;
 
-        _dialogueTextBox = GetComponent<TextMeshProUGUI>();
-        _portraitSpriteRenderer = GetComponent<SpriteRenderer>();
+        _dialogueText = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void Start()
+    {
+        ParseNextLine(new InputAction.CallbackContext());
     }
 
     private void OnEnable()
@@ -42,8 +47,8 @@ public class Cutscene : MonoBehaviour
         var nextLineSpriteIndex = Array.IndexOf(characterIndicators, nextLineSpriteCode);
         var nextLineSprite = characterSprites[nextLineSpriteIndex];
 
-        _portraitSpriteRenderer.sprite = nextLineSprite;
-        _dialogueTextBox.text = nextLine[1..];
+        portraitImage.sprite = nextLineSprite;
+        _dialogueText.text = nextLine[1..];
 
         _nextPosition++;
     }
