@@ -58,7 +58,7 @@ public class AreaManager : MonoBehaviour
         {
             TargetPlayer = playerGameObject;
         }
-        
+
         public GameObject TargetPlayer { get; private set; }
     }
 }

@@ -18,14 +18,14 @@ public class AgentController : MonoBehaviour
     public float chickenRepositionDelay;
     public float chickenMaxDistance;
 
+    // AreaManager that agent spawned in
+    public AreaManager assignedAreaManager;
+
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
 
     // NavMeshAgent component (located on Awake)
     private NavMeshAgent _navMeshAgent;
-
-    // AreaManager that agent spawned in
-    public AreaManager assignedAreaManager;
 
     // True when player has entered area collider
     private bool _playerSpotted;

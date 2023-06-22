@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +7,8 @@ public class Player : MonoBehaviour
     private const float Speed = 5f;
 
     // Location that ammo is spawned relative to player pivot
-    public Vector2 ammoOffsetVector;
+    public Vector2[] ammoOffsetVectors;
+
     // The object instantiated on fire
     public GameObject ammoType;
 
@@ -18,10 +18,11 @@ public class Player : MonoBehaviour
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
 
-    // Rigidbody for solid collision detection and movement
-    private Rigidbody2D _rigidbody2D;
     // Vector2 storing current movement input
     private Vector2 _movementVector2;
+
+    // Rigidbody for solid collision detection and movement
+    private Rigidbody2D _rigidbody2D;
 
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
     {
         // Stop animator locking up
         _animationStateController.FixDirectionLockup();
-        
+
         // Get player inputs and set Vector2
         // Input System clamps magnitude to 1 otherwise diagonal input would be 40% faster
         _movementVector2 = _actions.gameplay.movement.ReadValue<Vector2>();
@@ -85,7 +86,9 @@ public class Player : MonoBehaviour
     private void OnPrimaryFire(InputAction.CallbackContext context)
     {
         _animationStateController.SetHoldingState(true);
-        Instantiate(ammoType, ammoOffsetVector + (Vector2)transform.position, Quaternion.Euler(0, 0, Vector2.Angle(Vector2.left, _animationStateController.GetFacingVector2())));
+        Instantiate(ammoType,
+            ammoOffsetVectors[(int)_animationStateController.CurrentDirection] + (Vector2)transform.position,
+            Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, _animationStateController.GetFacingVector2())));
     }
 
     public void OnShot()

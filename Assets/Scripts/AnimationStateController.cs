@@ -1,9 +1,17 @@
 using System;
-using System.Diagnostics;
 using UnityEngine;
 
 public class AnimationStateController
 {
+    // Enumerators for controlling animator parameters
+    public enum Direction
+    {
+        Down,
+        Up,
+        Left,
+        Right
+    }
+
     // Animator parameter id caches
     private static readonly int AnimatorCurrentDirection = Animator.StringToHash("CurrentDirection");
     private static readonly int AnimatorDirection = Animator.StringToHash("Direction");
@@ -27,9 +35,10 @@ public class AnimationStateController
         _animator = animator;
     }
 
-    private Direction CurrentDirection
+    public Direction CurrentDirection
     {
-        set
+        get => _direction;
+        private set
         {
             // Check if the value is any different
             if (_direction == value) return;
@@ -71,7 +80,7 @@ public class AnimationStateController
             0 => Vector2.down,
             1 => Vector2.up,
             2 => Vector2.left,
-            _ => Vector2.right,
+            _ => Vector2.right
         };
     }
 
@@ -101,15 +110,6 @@ public class AnimationStateController
             <= -45 => Direction.Right,
             _ => Direction.Up
         };
-    }
-
-    // Enumerators for controlling animator parameters
-    private enum Direction
-    {
-        Down,
-        Up,
-        Left,
-        Right
     }
 
     [Flags]
