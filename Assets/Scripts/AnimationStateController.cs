@@ -9,7 +9,8 @@ public class AnimationStateController
         Down,
         Up,
         Left,
-        Right
+        Right,
+        Smoke
     }
 
     // Animator parameter id caches
@@ -65,6 +66,12 @@ public class AnimationStateController
             // Save the new State
             _state = value;
         }
+    }
+
+    public void Die()
+    {
+        // Hacky way of animating this faster
+        CurrentDirection = Direction.Smoke;
     }
 
     public void FixDirectionLockup()

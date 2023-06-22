@@ -93,6 +93,7 @@ public class Player : MonoBehaviour
 
     public void OnShot()
     {
-        Debug.Log(":3");
+        _animationStateController.Die();
+        Destroy(gameObject, 3);
     }
 }

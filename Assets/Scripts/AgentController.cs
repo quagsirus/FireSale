@@ -156,6 +156,7 @@ public class AgentController : MonoBehaviour
     {
         // Unsubscribe from AreaManager event
         assignedAreaManager.PlayerEnteredArea -= OnPlayerEnteredArea;
-        Destroy(gameObject);
+        _animationStateController.Die();
+        Destroy(gameObject, 3);
     }
 }
