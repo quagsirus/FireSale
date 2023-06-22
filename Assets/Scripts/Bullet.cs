@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        var rb = gameObject.GetComponent<Rigidbody2D>()
+        var rb = gameObject.GetComponent<Rigidbody2D>();
         var fRotation = rb.rotation * Mathf.Deg2Rad;
         var fX = Mathf.Sin(fRotation);
         var fY = Mathf.Cos(fRotation);
