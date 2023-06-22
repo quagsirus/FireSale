@@ -159,7 +159,7 @@ public class Player : MonoBehaviour
     {
         // Take off a life
         lives--;
-        _healthIcons[8 - lives].sprite = deadIcon;
+        _healthIcons[9 - lives].sprite = deadIcon;
         // Only die if 0 health
         if (lives > 0)
             return;

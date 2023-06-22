@@ -178,6 +178,34 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""pause"",
+            ""id"": ""3a2fed77-c918-417b-a6ad-d8498bf304bd"",
+            ""actions"": [
+                {
+                    ""name"": ""openPauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""be76a447-8a76-425a-a1dd-bf79e076fb33"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""491b46f2-fbd2-40c3-bff4-93b0a5cecd05"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""openPauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -187,6 +215,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         m_gameplay_interact = m_gameplay.FindAction("interact", throwIfNotFound: true);
         m_gameplay_movement = m_gameplay.FindAction("movement", throwIfNotFound: true);
         m_gameplay_primaryFire = m_gameplay.FindAction("primaryFire", throwIfNotFound: true);
+        // pause
+        m_pause = asset.FindActionMap("pause", throwIfNotFound: true);
+        m_pause_openPauseMenu = m_pause.FindAction("openPauseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -306,10 +337,60 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         }
     }
     public GameplayActions @gameplay => new GameplayActions(this);
+
+    // pause
+    private readonly InputActionMap m_pause;
+    private List<IPauseActions> m_PauseActionsCallbackInterfaces = new List<IPauseActions>();
+    private readonly InputAction m_pause_openPauseMenu;
+    public struct PauseActions
+    {
+        private @GameActions m_Wrapper;
+        public PauseActions(@GameActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @openPauseMenu => m_Wrapper.m_pause_openPauseMenu;
+        public InputActionMap Get() { return m_Wrapper.m_pause; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PauseActions set) { return set.Get(); }
+        public void AddCallbacks(IPauseActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PauseActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PauseActionsCallbackInterfaces.Add(instance);
+            @openPauseMenu.started += instance.OnOpenPauseMenu;
+            @openPauseMenu.performed += instance.OnOpenPauseMenu;
+            @openPauseMenu.canceled += instance.OnOpenPauseMenu;
+        }
+
+        private void UnregisterCallbacks(IPauseActions instance)
+        {
+            @openPauseMenu.started -= instance.OnOpenPauseMenu;
+            @openPauseMenu.performed -= instance.OnOpenPauseMenu;
+            @openPauseMenu.canceled -= instance.OnOpenPauseMenu;
+        }
+
+        public void RemoveCallbacks(IPauseActions instance)
+        {
+            if (m_Wrapper.m_PauseActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPauseActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PauseActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PauseActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PauseActions @pause => new PauseActions(this);
     public interface IGameplayActions
     {
         void OnInteract(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnPrimaryFire(InputAction.CallbackContext context);
+    }
+    public interface IPauseActions
+    {
+        void OnOpenPauseMenu(InputAction.CallbackContext context);
     }
 }
