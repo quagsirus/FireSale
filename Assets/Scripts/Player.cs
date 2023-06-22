@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -22,8 +22,9 @@ public class Player : MonoBehaviour
 
     // Where to discover life icons
     public GameObject healthPanel;
-    // Stores all discovered life icon Image components
-    private Image[] _healthIcons;
+
+    // Game over screen to enable on death
+    public GameObject gameOverPanel;
 
     // LayerMask for interactions
     public LayerMask interactableLayerMask;
@@ -44,6 +45,9 @@ public class Player : MonoBehaviour
 
     // True after interacted with key card on floor
     private bool _hasKeycard;
+
+    // Stores all discovered life icon Image components
+    private Image[] _healthIcons;
 
     // Vector2 storing current movement input
     private Vector2 _movementVector2;
@@ -141,6 +145,9 @@ public class Player : MonoBehaviour
             spriteRenderer.sortingOrder += 1;
             interactedWithObject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
+        else if (interactedWithObject.gameObject.CompareTag("TimeGun"))
+        {
+        }
     }
 
     private void OnPrimaryFire(InputAction.CallbackContext context)
@@ -163,6 +170,8 @@ public class Player : MonoBehaviour
         // Only die if 0 health
         if (lives > 0)
             return;
+        // Show game over screen
+        gameOverPanel.SetActive(true);
         // Ensures animation will switch correctly
         _pauseAntiLockup = true;
         // Stops majority of Update loop code

@@ -6783,3 +6783,64 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &7703016454294718257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.437
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.763
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727756039612274604, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082828585412725269, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}
+      propertyPath: m_Name
+      value: TimeGun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b963dc6c062530448ccf28a0c8665e6, type: 3}

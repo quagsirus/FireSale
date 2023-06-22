@@ -9,11 +9,11 @@ public class Cutscene : MonoBehaviour
     public char[] characterIndicators;
     public Sprite[] characterSprites;
 
-    private int _nextPosition;
-
     private GameActions _actions;
 
     private TextMeshProUGUI _dialogueTextBox;
+
+    private int _nextPosition;
     private SpriteRenderer _portraitSpriteRenderer;
 
     private void Awake()
@@ -22,7 +22,17 @@ public class Cutscene : MonoBehaviour
         _actions.cutscene.displayNextLine.performed += ParseNextLine;
 
         _dialogueTextBox = GetComponent<TextMeshProUGUI>();
-        _portraitSpriteRenderer  = GetComponent<SpriteRenderer>();
+        _portraitSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        _actions.cutscene.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _actions.cutscene.Disable();
     }
 
     private void ParseNextLine(InputAction.CallbackContext context)
@@ -36,15 +46,5 @@ public class Cutscene : MonoBehaviour
         _dialogueTextBox.text = nextLine[1..];
 
         _nextPosition++;
-    }
-
-    private void OnEnable()
-    {
-        _actions.cutscene.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _actions.cutscene.Disable();
     }
 }
