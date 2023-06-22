@@ -47,6 +47,8 @@ public class AgentController : MonoBehaviour
     // Timer for wander repositioning
     private float _wanderTimer;
 
+    private bool _pauseAntiLockup;
+
     private void Awake()
     {
         // Cache NavMeshAgent component on spawn
@@ -72,7 +74,10 @@ public class AgentController : MonoBehaviour
     private void Update()
     {
         // Stop animator locking up
-        _animationStateController.FixDirectionLockup();
+        if (_pauseAntiLockup)
+            _pauseAntiLockup = false;
+        else
+            _animationStateController.FixDirectionLockup();
 
         // Cache current position as we'll be accessing it at least once and multiple times in some cases
         var position = transform.position;
@@ -156,7 +161,8 @@ public class AgentController : MonoBehaviour
     {
         // Unsubscribe from AreaManager event
         assignedAreaManager.PlayerEnteredArea -= OnPlayerEnteredArea;
+        _pauseAntiLockup = true;
         _animationStateController.Die();
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 1f);
     }
 }

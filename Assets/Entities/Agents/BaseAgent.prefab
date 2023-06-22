@@ -51,8 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggressive: 0
-  aggressiveAttackDelay: 0
-  aggressiveStoppingDistance: 0
   wanderSpeed: 2
   activeSpeed: 3.5
   wanderRepositionDelay: 5
@@ -112,7 +110,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

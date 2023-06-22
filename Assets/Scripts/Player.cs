@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     // Rigidbody for solid collision detection and movement
     private Rigidbody2D _rigidbody2D;
 
+    private bool _pauseAntiLockup;
+
     private void Awake()
     {
         // Instantiate AnimationStateController
@@ -43,7 +45,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
         // Stop animator locking up
-        _animationStateController.FixDirectionLockup();
+        if (_pauseAntiLockup)
+            _pauseAntiLockup = false;
+        else
+            _animationStateController.FixDirectionLockup();
 
         // Get player inputs and set Vector2
         // Input System clamps magnitude to 1 otherwise diagonal input would be 40% faster
@@ -93,7 +98,8 @@ public class Player : MonoBehaviour
 
     public void OnShot()
     {
+        _pauseAntiLockup = true;
         _animationStateController.Die();
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 1);
     }
 }

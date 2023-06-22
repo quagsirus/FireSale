@@ -109,6 +109,8 @@ public class AnimationStateController
 
     public void SetMovementDirection(Vector2 movementVector2)
     {
+        if (CurrentDirection == Direction.Smoke)
+            return;
         // Get facing direction based on angle of movement
         CurrentDirection = Vector2.SignedAngle(Vector2.up, movementVector2) switch
         {
