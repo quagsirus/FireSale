@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     // Constant modifiers
-    private const float Speed = 5f;
+    private const float Speed = 10f;
 
     public Vector2 ammoOffsetVector;
 
