@@ -35,8 +35,14 @@ public class AgentController : MonoBehaviour
     // Timer for attack delay
     private float _attackTimer;
 
+    // True when dead, stops most functions in Update
+    private bool _dead;
+
     // NavMeshAgent component (located on Awake)
     private NavMeshAgent _navMeshAgent;
+
+    // True for one frame when direction changed outside Update to allow animator to work
+    private bool _pauseAntiLockup;
 
     // True when player has entered area collider
     private bool _playerSpotted;
@@ -46,8 +52,6 @@ public class AgentController : MonoBehaviour
 
     // Timer for wander repositioning
     private float _wanderTimer;
-
-    private bool _pauseAntiLockup;
 
     private void Awake()
     {
@@ -78,6 +82,15 @@ public class AgentController : MonoBehaviour
             _pauseAntiLockup = false;
         else
             _animationStateController.FixDirectionLockup();
+
+        if (_dead)
+            return;
+        if (!_playerTransform && _playerSpotted)
+        {
+            _playerSpotted = false;
+            _animationStateController.SetHoldingState(false);
+        }
+
 
         // Cache current position as we'll be accessing it at least once and multiple times in some cases
         var position = transform.position;
@@ -130,14 +143,20 @@ public class AgentController : MonoBehaviour
         {
             // Update animation movement direction
             _animationStateController.SetMovementDirection(_playerTransform.position - position);
-
+            // Increment timer
             _attackTimer += Time.deltaTime;
             if (_attackTimer > aggressiveAttackDelay)
             {
+                // Get future start location of bullet
                 var ammoInstancePosition = ammoOffsetVectors[(int)_animationStateController.CurrentDirection] +
                                            (Vector2)transform.position;
+                // Get angle in degrees towards player
+                var angleToTarget = Vector2.SignedAngle(Vector2.right,
+                    Vector2.ClampMagnitude(_navMeshAgent.destination - position, 1));
+                // Spawn bullet
                 Instantiate(ammoType, ammoInstancePosition,
-                    Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, Vector2.ClampMagnitude(_navMeshAgent.destination - position, 1))));
+                    Quaternion.Euler(0, 0, angleToTarget));
+                // Reset timer
                 _attackTimer = 0;
             }
         }
@@ -149,11 +168,15 @@ public class AgentController : MonoBehaviour
     // Subscribed to PlayerEnteredArea event in AreaManager
     public void OnPlayerEnteredArea(object sender, AreaManager.PlayerEnteredAreaArgs e)
     {
+        // Switch NavMeshAgent parameters to aggressive variants
         if (aggressive)
             _navMeshAgent.stoppingDistance = aggressiveStoppingDistance;
-        _playerSpotted = true;
-        _playerTransform = e.TargetPlayer.transform;
         _navMeshAgent.speed = activeSpeed;
+        // True for Update loop
+        _playerSpotted = true;
+        // Store target Transform
+        _playerTransform = e.TargetPlayer.transform;
+        // Change animation variant to weapon type
         _animationStateController.SetHoldingState(true);
     }
 
@@ -161,8 +184,13 @@ public class AgentController : MonoBehaviour
     {
         // Unsubscribe from AreaManager event
         assignedAreaManager.PlayerEnteredArea -= OnPlayerEnteredArea;
+        // Ensures animation will switch correctly
         _pauseAntiLockup = true;
+        // Stops majority of Update loop code
+        _dead = true;
+        // Play smoke animation
         _animationStateController.Die();
+
         Destroy(gameObject, 1f);
     }
 }
