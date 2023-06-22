@@ -22,7 +22,7 @@ public class AgentController : MonoBehaviour
 
     // AreaManager that agent spawned in
     public AreaManager assignedAreaManager;
-    
+
     // Location that ammo is spawned relative to pivot
     public Vector2[] ammoOffsetVectors;
 
@@ -31,6 +31,9 @@ public class AgentController : MonoBehaviour
 
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
+
+    // Timer for attack delay
+    private float _attackTimer;
 
     // NavMeshAgent component (located on Awake)
     private NavMeshAgent _navMeshAgent;
@@ -41,8 +44,6 @@ public class AgentController : MonoBehaviour
     // Assigned to the player's transform in OnPlayerEnteredArea
     private Transform _playerTransform;
 
-    // Timer for attack delay
-    private float _attackTimer;
     // Timer for wander repositioning
     private float _wanderTimer;
 
@@ -122,12 +123,16 @@ public class AgentController : MonoBehaviour
         }
         else if (aggressive && _playerSpotted)
         {
+            // Update animation movement direction
+            _animationStateController.SetMovementDirection(_playerTransform.position - position);
+
             _attackTimer += Time.deltaTime;
             if (_attackTimer > aggressiveAttackDelay)
             {
-                Instantiate(ammoType,
-                    ammoOffsetVectors[(int)_animationStateController.CurrentDirection] + (Vector2)transform.position,
-                    Quaternion.FromToRotation(position, _navMeshAgent.destination));
+                var ammoInstancePosition = ammoOffsetVectors[(int)_animationStateController.CurrentDirection] +
+                                           (Vector2)transform.position;
+                Instantiate(ammoType, ammoInstancePosition,
+                    Quaternion.Euler(0, 0, Vector2.SignedAngle(position, _navMeshAgent.destination)));
                 _attackTimer = 0;
             }
         }
