@@ -58,6 +58,8 @@ MonoBehaviour:
   chickenRepositionDelay: 1
   chickenMaxDistance: 10
   assignedAreaManager: {fileID: 0}
+  ammoOffsetVectors: []
+  ammoType: {fileID: 0}
 --- !u!195 &45862792006013140
 NavMeshAgent:
   m_ObjectHideFlags: 0

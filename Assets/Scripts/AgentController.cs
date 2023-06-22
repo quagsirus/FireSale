@@ -7,6 +7,8 @@ public class AgentController : MonoBehaviour
 {
     // Aggressive flag (true for player tracking, false for chicken running)
     public bool aggressive;
+    public float aggressiveAttackDelay;
+    public float aggressiveStoppingDistance;
 
     // Movement speeds
     public float wanderSpeed;
@@ -20,6 +22,12 @@ public class AgentController : MonoBehaviour
 
     // AreaManager that agent spawned in
     public AreaManager assignedAreaManager;
+    
+    // Location that ammo is spawned relative to pivot
+    public Vector2[] ammoOffsetVectors;
+
+    // The object instantiated on fire
+    public GameObject ammoType;
 
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
@@ -33,6 +41,8 @@ public class AgentController : MonoBehaviour
     // Assigned to the player's transform in OnPlayerEnteredArea
     private Transform _playerTransform;
 
+    // Timer for attack delay
+    private float _attackTimer;
     // Timer for wander repositioning
     private float _wanderTimer;
 
@@ -110,14 +120,27 @@ public class AgentController : MonoBehaviour
             var nextPosition = _navMeshAgent.nextPosition;
             transform.position = new Vector3(nextPosition.x, nextPosition.y, 0);
         }
+        else if (aggressive && _playerSpotted)
+        {
+            _attackTimer += Time.deltaTime;
+            if (_attackTimer > aggressiveAttackDelay)
+            {
+                Instantiate(ammoType,
+                    ammoOffsetVectors[(int)_animationStateController.CurrentDirection] + (Vector2)transform.position,
+                    Quaternion.FromToRotation(position, _navMeshAgent.destination));
+                _attackTimer = 0;
+            }
+        }
 
         // Update running/idle state based on if stopping distance has been reached
-        _animationStateController.SetRunningState(isMoving, !_playerSpotted);
+        _animationStateController.SetRunningState(isMoving, !_playerSpotted && !aggressive);
     }
 
     // Subscribed to PlayerEnteredArea event in AreaManager
     public void OnPlayerEnteredArea(object sender, AreaManager.PlayerEnteredAreaArgs e)
     {
+        if (aggressive)
+            _navMeshAgent.stoppingDistance = aggressiveStoppingDistance;
         _playerSpotted = true;
         _playerTransform = e.TargetPlayer.transform;
         _navMeshAgent.speed = activeSpeed;
