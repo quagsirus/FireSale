@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     // Game over screen to enable on death
     public GameObject gameOverPanel;
 
+    // Win screen to show after time gun
+    public GameObject winPanel;
+
     // LayerMask for interactions
     public LayerMask interactableLayerMask;
 
@@ -147,6 +150,8 @@ public class Player : MonoBehaviour
         }
         else if (interactedWithObject.gameObject.CompareTag("TimeGun"))
         {
+            winPanel.SetActive(true);
+            Destroy(interactedWithObject.gameObject);
         }
     }
 
