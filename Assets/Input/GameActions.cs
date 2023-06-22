@@ -219,6 +219,15 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""9708e714-126e-40b5-8f5c-04561a045c18"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -243,6 +252,28 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
                     ""action"": ""displayNextLine"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96e8d950-7657-46da-a72e-2f30c0499a8c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b8b364b-53ec-4c22-b7d0-df7509aadd49"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -260,6 +291,7 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
         // cutscene
         m_cutscene = asset.FindActionMap("cutscene", throwIfNotFound: true);
         m_cutscene_displayNextLine = m_cutscene.FindAction("displayNextLine", throwIfNotFound: true);
+        m_cutscene_skip = m_cutscene.FindAction("skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -430,11 +462,13 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_cutscene;
     private List<ICutsceneActions> m_CutsceneActionsCallbackInterfaces = new List<ICutsceneActions>();
     private readonly InputAction m_cutscene_displayNextLine;
+    private readonly InputAction m_cutscene_skip;
     public struct CutsceneActions
     {
         private @GameActions m_Wrapper;
         public CutsceneActions(@GameActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @displayNextLine => m_Wrapper.m_cutscene_displayNextLine;
+        public InputAction @skip => m_Wrapper.m_cutscene_skip;
         public InputActionMap Get() { return m_Wrapper.m_cutscene; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -447,6 +481,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @displayNextLine.started += instance.OnDisplayNextLine;
             @displayNextLine.performed += instance.OnDisplayNextLine;
             @displayNextLine.canceled += instance.OnDisplayNextLine;
+            @skip.started += instance.OnSkip;
+            @skip.performed += instance.OnSkip;
+            @skip.canceled += instance.OnSkip;
         }
 
         private void UnregisterCallbacks(ICutsceneActions instance)
@@ -454,6 +491,9 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
             @displayNextLine.started -= instance.OnDisplayNextLine;
             @displayNextLine.performed -= instance.OnDisplayNextLine;
             @displayNextLine.canceled -= instance.OnDisplayNextLine;
+            @skip.started -= instance.OnSkip;
+            @skip.performed -= instance.OnSkip;
+            @skip.canceled -= instance.OnSkip;
         }
 
         public void RemoveCallbacks(ICutsceneActions instance)
@@ -484,5 +524,6 @@ public partial class @GameActions: IInputActionCollection2, IDisposable
     public interface ICutsceneActions
     {
         void OnDisplayNextLine(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

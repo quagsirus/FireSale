@@ -22,6 +22,7 @@ public class Cutscene : MonoBehaviour
     {
         _actions = new GameActions();
         _actions.cutscene.displayNextLine.performed += ParseNextLine;
+        _actions.cutscene.skip.performed += SkipCutscene;
 
         _dialogueText = GetComponentInChildren<TextMeshProUGUI>();
     }
@@ -57,5 +58,10 @@ public class Cutscene : MonoBehaviour
         _dialogueText.text = nextLine[1..];
 
         _nextPosition++;
+    }
+
+    private static void SkipCutscene(InputAction.CallbackContext context)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

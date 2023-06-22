@@ -197,6 +197,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "skip",
+                    "type": "Button",
+                    "id": "9708e714-126e-40b5-8f5c-04561a045c18",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -219,6 +228,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "displayNextLine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96e8d950-7657-46da-a72e-2f30c0499a8c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b8b364b-53ec-4c22-b7d0-df7509aadd49",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "skip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
