@@ -26,7 +26,13 @@ public class AreaManager : MonoBehaviour
         // Subscribe all of them to the event that will be triggered when the player enters
         // this saves many GetComponentInParent calls during gameplay which could cause a lag spike
         foreach (var agent in agentsInRoom)
-            PlayerEnteredArea += agent.GetComponentInParent<AgentController>().OnPlayerEnteredArea;
+        {
+            var agentController = agent.GetComponentInParent<AgentController>();
+            // Tell AgentController who we are so they can unsubscribe upon death
+            agentController.assignedAreaManager = this;
+            // Subscribe to event
+            PlayerEnteredArea += agentController.OnPlayerEnteredArea;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -44,7 +50,7 @@ public class AreaManager : MonoBehaviour
 
 
     // Define event and arguments
-    private event EventHandler<PlayerEnteredAreaArgs> PlayerEnteredArea;
+    public event EventHandler<PlayerEnteredAreaArgs> PlayerEnteredArea;
 
     public class PlayerEnteredAreaArgs : EventArgs
     {
@@ -52,7 +58,7 @@ public class AreaManager : MonoBehaviour
         {
             TargetPlayer = playerGameObject;
         }
-
+        
         public GameObject TargetPlayer { get; private set; }
     }
 }

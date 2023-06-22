@@ -24,6 +24,9 @@ public class AgentController : MonoBehaviour
     // NavMeshAgent component (located on Awake)
     private NavMeshAgent _navMeshAgent;
 
+    // AreaManager that agent spawned in
+    public AreaManager assignedAreaManager;
+
     // True when player has entered area collider
     private bool _playerSpotted;
 
@@ -119,5 +122,12 @@ public class AgentController : MonoBehaviour
         _playerTransform = e.TargetPlayer.transform;
         _navMeshAgent.speed = activeSpeed;
         _animationStateController.SetHoldingState(true);
+    }
+
+    public void OnShot()
+    {
+        // Unsubscribe from AreaManager event
+        assignedAreaManager.PlayerEnteredArea -= OnPlayerEnteredArea;
+        Destroy(gameObject);
     }
 }

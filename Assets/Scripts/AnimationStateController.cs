@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using UnityEngine;
 
 public class AnimationStateController
@@ -61,6 +62,17 @@ public class AnimationStateController
     {
         // Stop animator locking up
         _animator.SetInteger(AnimatorCurrentDirection, _animator.GetInteger(AnimatorDirection));
+    }
+
+    public Vector2 GetFacingVector2()
+    {
+        return (int)_direction switch
+        {
+            0 => Vector2.down,
+            1 => Vector2.up,
+            2 => Vector2.left,
+            _ => Vector2.right,
+        };
     }
 
     public void SetHoldingState(bool holding)

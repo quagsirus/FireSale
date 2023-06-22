@@ -6,6 +6,11 @@ public class Player : MonoBehaviour
     // Constant modifiers
     private const float Speed = 5f;
 
+    public Vector2 ammoOffsetVector;
+
+    // The object instantiated on fire
+    public GameObject ammoType;
+
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
 
@@ -27,6 +32,8 @@ public class Player : MonoBehaviour
         _actions = new GameActions();
         // Bind interact function to event
         _actions.gameplay.interact.performed += OnInteract;
+        // Bind primary fire function to event
+        _actions.gameplay.primaryFire.performed += OnPrimaryFire;
     }
 
     private void Update()
@@ -66,5 +73,17 @@ public class Player : MonoBehaviour
     private static void OnInteract(InputAction.CallbackContext context)
     {
         Debug.Log("Interact!");
+    }
+
+    private void OnPrimaryFire(InputAction.CallbackContext context)
+    {
+        _animationStateController.SetHoldingState(true);
+        Instantiate(ammoType, ammoOffsetVector + (Vector2)transform.position,
+            Quaternion.LookRotation(_animationStateController.GetFacingVector2()));
+    }
+
+    public void OnShot()
+    {
+        Debug.Log(":3");
     }
 }
