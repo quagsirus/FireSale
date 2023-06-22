@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     // The object instantiated on fire
     public GameObject ammoType;
 
+    // Number of hits player can take before death
+    public float lives;
+
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
 
@@ -109,7 +112,11 @@ public class Player : MonoBehaviour
 
     public void OnShot()
     {
-        Debug.Log(":3");
+        // Take off a life
+        lives--;
+        // Only die if 0 health
+        if (lives > 0)
+            return;
         // Ensures animation will switch correctly
         _pauseAntiLockup = true;
         // Stops majority of Update loop code

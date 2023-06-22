@@ -22,11 +22,9 @@ public class Bullet : MonoBehaviour
             otherPlayer.OnShot();
         // Only proceed if we the collision item has a parent
         if (other.transform.parent != null)
-        {
             if (other.transform.parent.TryGetComponent<AgentController>(out var otherAgent))
                 // Kill agent if detected
                 otherAgent.OnShot();
-        }
 
         // Remove bullet
         Destroy(gameObject);
