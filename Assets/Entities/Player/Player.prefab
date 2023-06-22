@@ -36,7 +36,7 @@ Transform:
   - {fileID: 3324886919823604113}
   - {fileID: 4920945564642601789}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3628697972798902501
 MonoBehaviour:
@@ -57,6 +57,10 @@ MonoBehaviour:
   - {x: 0.63, y: 0.8}
   ammoType: {fileID: 5992529557956655282, guid: 90c3e9722fe49d64a8b4d79a75075a57, type: 3}
   lives: 9
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 24576
+  openElevatorSprite: {fileID: 0}
 --- !u!95 &3481516852641054777
 Animator:
   serializedVersion: 7

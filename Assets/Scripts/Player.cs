@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,14 +16,24 @@ public class Player : MonoBehaviour
     // Number of hits player can take before death
     public float lives;
 
+    public LayerMask interactableLayerMask;
+
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
 
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
 
+    private BoxCollider2D _boxCollider;
+
     // True when dead, stops most functions in Update
     private bool _dead;
+
+    // True after interacted with key card on floor
+    private bool _hasKeycard;
+
+    // What to change the elevator's sprite renderer to after opening
+    public Sprite openElevatorSprite;
 
     // Vector2 storing current movement input
     private Vector2 _movementVector2;
@@ -38,8 +49,9 @@ public class Player : MonoBehaviour
         // Instantiate AnimationStateController
         _animationStateController = new AnimationStateController(gameObject.GetComponent<Animator>());
 
-        // Cache Rigidbody2D component on spawn
+        // Cache Rigidbody2D and BoxCollider2D components on spawn
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        _boxCollider = gameObject.GetComponent<BoxCollider2D>();
 
         // Instantiate game actions wrapper class
         _actions = new GameActions();
@@ -93,9 +105,27 @@ public class Player : MonoBehaviour
         _actions.gameplay.Disable();
     }
 
-    private static void OnInteract(InputAction.CallbackContext context)
+    private void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("Interact!");
+        // Check what objects are around us
+        var interactedWithObject =
+            Physics2D.OverlapBox(transform.position, _boxCollider.size * 2, 0, interactableLayerMask);
+        // Only continue if we are near something interactable
+        if (interactedWithObject == null) return;
+        if (interactedWithObject.gameObject.CompareTag("Keycard"))
+        {
+            _hasKeycard = true;
+            Destroy(interactedWithObject.gameObject);
+        }
+        else if (interactedWithObject.gameObject.CompareTag("ElevatorDown") && _hasKeycard)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (interactedWithObject.gameObject.CompareTag("ElevatorOpen") && _hasKeycard)
+        {
+            interactedWithObject.gameObject.GetComponent<SpriteRenderer>().sprite = openElevatorSprite;
+            interactedWithObject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     private void OnPrimaryFire(InputAction.CallbackContext context)
