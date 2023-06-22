@@ -137,7 +137,7 @@ public class AgentController : MonoBehaviour
                 var ammoInstancePosition = ammoOffsetVectors[(int)_animationStateController.CurrentDirection] +
                                            (Vector2)transform.position;
                 Instantiate(ammoType, ammoInstancePosition,
-                    Quaternion.Euler(0, 0, Vector2.SignedAngle(position, _navMeshAgent.destination)));
+                    Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, Vector2.ClampMagnitude(_navMeshAgent.destination - position, 1))));
                 _attackTimer = 0;
             }
         }
