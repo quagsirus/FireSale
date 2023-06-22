@@ -51,8 +51,8 @@ public class AgentController : MonoBehaviour
     {
         // Destroy self if spawn is in invalid location
         if (_navMeshAgent.isOnNavMesh) return;
-        throw new Exception("Invalid spawn location");
         Destroy(gameObject);
+        throw new Exception("Invalid spawn location");
     }
 
     private void Update()
