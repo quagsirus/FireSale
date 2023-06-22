@@ -18,13 +18,17 @@ public class Player : MonoBehaviour
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
 
+    // True when dead, stops most functions in Update
+    private bool _dead;
+
     // Vector2 storing current movement input
     private Vector2 _movementVector2;
 
+    // True for one frame when direction changed outside Update to allow animator to work
+    private bool _pauseAntiLockup;
+
     // Rigidbody for solid collision detection and movement
     private Rigidbody2D _rigidbody2D;
-
-    private bool _pauseAntiLockup;
 
     private void Awake()
     {
@@ -49,6 +53,9 @@ public class Player : MonoBehaviour
             _pauseAntiLockup = false;
         else
             _animationStateController.FixDirectionLockup();
+
+        if (_dead)
+            return;
 
         // Get player inputs and set Vector2
         // Input System clamps magnitude to 1 otherwise diagonal input would be 40% faster
@@ -90,6 +97,10 @@ public class Player : MonoBehaviour
 
     private void OnPrimaryFire(InputAction.CallbackContext context)
     {
+        // Don't try to shoot if dead
+        if (_dead)
+            return;
+        // Change animation variant to weapon type
         _animationStateController.SetHoldingState(true);
         Instantiate(ammoType,
             ammoOffsetVectors[(int)_animationStateController.CurrentDirection] + (Vector2)transform.position,
@@ -98,8 +109,18 @@ public class Player : MonoBehaviour
 
     public void OnShot()
     {
+        Debug.Log(":3");
+        // Ensures animation will switch correctly
         _pauseAntiLockup = true;
+        // Stops majority of Update loop code
+        _dead = true;
+        // Stop collision checks
+        _rigidbody2D.simulated = false;
+        // Keep camera working
+        transform.DetachChildren();
+        // Play smoke animation
         _animationStateController.Die();
+
         Destroy(gameObject, 1);
     }
 }
