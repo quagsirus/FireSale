@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -14,9 +15,21 @@ public class Player : MonoBehaviour
     public GameObject ammoType;
 
     // Number of hits player can take before death
-    public float lives;
+    public int lives;
 
+    // Sprite for updating health display
+    public Sprite deadIcon;
+
+    // Where to discover life icons
+    public GameObject healthPanel;
+    // Stores all discovered life icon Image components
+    private Image[] _healthIcons;
+
+    // LayerMask for interactions
     public LayerMask interactableLayerMask;
+
+    // What to change the elevator's sprite renderer to after opening
+    public Sprite openElevatorSprite;
 
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
@@ -31,9 +44,6 @@ public class Player : MonoBehaviour
 
     // True after interacted with key card on floor
     private bool _hasKeycard;
-
-    // What to change the elevator's sprite renderer to after opening
-    public Sprite openElevatorSprite;
 
     // Vector2 storing current movement input
     private Vector2 _movementVector2;
@@ -52,6 +62,9 @@ public class Player : MonoBehaviour
         // Cache Rigidbody2D and BoxCollider2D components on spawn
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         _boxCollider = gameObject.GetComponent<BoxCollider2D>();
+
+        // Discover health icons
+        _healthIcons = healthPanel.GetComponentsInChildren<Image>();
 
         // Instantiate game actions wrapper class
         _actions = new GameActions();
@@ -146,6 +159,7 @@ public class Player : MonoBehaviour
     {
         // Take off a life
         lives--;
+        _healthIcons[8 - lives].sprite = deadIcon;
         // Only die if 0 health
         if (lives > 0)
             return;
@@ -161,5 +175,10 @@ public class Player : MonoBehaviour
         _animationStateController.Die();
 
         Destroy(gameObject, 1);
+    }
+
+    private void RefreshHealth()
+    {
+
     }
 }
