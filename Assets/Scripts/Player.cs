@@ -176,9 +176,4 @@ public class Player : MonoBehaviour
 
         Destroy(gameObject, 1);
     }
-
-    private void RefreshHealth()
-    {
-
-    }
 }
