@@ -123,7 +123,9 @@ public class Player : MonoBehaviour
         }
         else if (interactedWithObject.gameObject.CompareTag("ElevatorSummon") && _hasKeycard)
         {
-            interactedWithObject.gameObject.GetComponent<SpriteRenderer>().sprite = openElevatorSprite;
+            var spriteRenderer = interactedWithObject.gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = openElevatorSprite;
+            spriteRenderer.sortingOrder += 1;
             interactedWithObject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
