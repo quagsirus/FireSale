@@ -75,7 +75,7 @@ public class AnimationStateController
         CurrentState = running
             ? slow
                 ? (CurrentState | State.Walking) & ~State.Running
-                : CurrentState | (State.Running & ~State.Walking)
+                : (CurrentState | State.Running) & ~State.Walking
             : CurrentState & ~(State.Walking | State.Running);
     }
 
