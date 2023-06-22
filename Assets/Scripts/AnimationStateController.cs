@@ -71,12 +71,12 @@ public class AnimationStateController
 
     public void SetRunningState(bool running, bool slow = false)
     {
-        // Enable / disable Walking flag based on input bool
-        if (slow)
-            CurrentState = running ? CurrentState | (State.Walking & ~State.Running) : CurrentState & ~State.Walking;
-        // Enable / disable Running flag based on input bool
-        else
-            CurrentState = running ? CurrentState | (State.Running & ~State.Walking) : CurrentState & ~State.Running;
+        // Switch between Walking, Running or neither
+        CurrentState = running
+            ? slow
+                ? (CurrentState | State.Walking) & ~State.Running
+                : CurrentState | (State.Running & ~State.Walking)
+            : CurrentState & ~(State.Walking | State.Running);
     }
 
     public void SetMovementDirection(Vector2 movementVector2)
