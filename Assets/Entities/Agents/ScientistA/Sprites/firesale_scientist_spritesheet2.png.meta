@@ -1,0 +1,653 @@
+fileFormatVersion: 2
+guid: e1692cb17eb416e449e54b91fd639a67
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3115567590169415914
+    second: firesale_scientist_spritesheet2_0
+  - first:
+      213: -8443982372485447619
+    second: firesale_scientist_spritesheet2_1
+  - first:
+      213: 4028184816058605815
+    second: firesale_scientist_spritesheet2_2
+  - first:
+      213: -2382055853853975163
+    second: firesale_scientist_spritesheet2_3
+  - first:
+      213: -7566144332459149753
+    second: firesale_scientist_spritesheet2_4
+  - first:
+      213: 5337588397016243810
+    second: firesale_scientist_spritesheet2_5
+  - first:
+      213: -3866674744298877249
+    second: firesale_scientist_spritesheet2_6
+  - first:
+      213: 6490135003843453366
+    second: firesale_scientist_spritesheet2_7
+  - first:
+      213: 4049381475418089042
+    second: firesale_scientist_spritesheet2_8
+  - first:
+      213: 8724243160120492535
+    second: firesale_scientist_spritesheet2_9
+  - first:
+      213: -8702287581405482360
+    second: firesale_scientist_spritesheet2_10
+  - first:
+      213: 1952316938655782895
+    second: firesale_scientist_spritesheet2_11
+  - first:
+      213: 3755455488961465966
+    second: firesale_scientist_spritesheet2_12
+  - first:
+      213: -4596594105978539700
+    second: firesale_scientist_spritesheet2_13
+  - first:
+      213: 476947602508829024
+    second: firesale_scientist_spritesheet2_14
+  - first:
+      213: 5001005918453624976
+    second: firesale_scientist_spritesheet2_15
+  - first:
+      213: -7232394595861295421
+    second: firesale_scientist_spritesheet2_16
+  - first:
+      213: 2153667634478283557
+    second: firesale_scientist_spritesheet2_17
+  - first:
+      213: -3862324328345640131
+    second: firesale_scientist_spritesheet2_18
+  - first:
+      213: -1191624778343746305
+    second: firesale_scientist_spritesheet2_19
+  - first:
+      213: 8903456711704488917
+    second: firesale_scientist_spritesheet2_20
+  - first:
+      213: -5160098469299938861
+    second: firesale_scientist_spritesheet2_21
+  - first:
+      213: -963898341366719307
+    second: firesale_scientist_spritesheet2_22
+  - first:
+      213: -8727831324713267622
+    second: firesale_scientist_spritesheet2_23
+  - first:
+      213: 349102838621051108
+    second: firesale_scientist_spritesheet2_24
+  - first:
+      213: -8084979241023870171
+    second: firesale_scientist_spritesheet2_25
+  - first:
+      213: -3495866396900414919
+    second: firesale_scientist_spritesheet2_26
+  - first:
+      213: 203538706863214550
+    second: firesale_scientist_spritesheet2_27
+  - first:
+      213: -7676523219404770721
+    second: firesale_scientist_spritesheet2_28
+  - first:
+      213: -1580986298654000797
+    second: firesale_scientist_spritesheet2_29
+  - first:
+      213: 6466776147081116609
+    second: firesale_scientist_spritesheet2_30
+  - first:
+      213: 8489455156238743069
+    second: firesale_scientist_spritesheet2_31
+  - first:
+      213: 4735490166567925049
+    second: firesale_scientist_spritesheet2_32
+  - first:
+      213: -1068357376444335328
+    second: firesale_scientist_spritesheet2_33
+  - first:
+      213: 7023496544510165208
+    second: firesale_scientist_spritesheet2_34
+  - first:
+      213: -2589284273529507174
+    second: firesale_scientist_spritesheet2_35
+  - first:
+      213: -8994976984040850427
+    second: firesale_scientist_spritesheet2_36
+  - first:
+      213: -70731663057229305
+    second: firesale_scientist_spritesheet2_37
+  - first:
+      213: -2276671250106114457
+    second: firesale_scientist_spritesheet2_38
+  - first:
+      213: 1644380064778089187
+    second: firesale_scientist_spritesheet2_39
+  - first:
+      213: -3268718076337195416
+    second: firesale_scientist_spritesheet2_40
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f6b32a8c743c4d0800000000000000
+      internalID: -3115567590169415914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 960
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30485635c2f0da80800000000000000
+      internalID: -8443982372485447619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 960
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0abca7fbcf6e730800000000000000
+      internalID: 4028184816058605815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 960
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58dd4e352dc31fed0800000000000000
+      internalID: -2382055853853975163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746ff6811d7aff690800000000000000
+      internalID: -7566144332459149753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 720
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e56690e5ce21a40800000000000000
+      internalID: 5337588397016243810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 720
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe471c7ecfc65ac0800000000000000
+      internalID: -3866674744298877249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 720
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b1ea685667911a50800000000000000
+      internalID: 6490135003843453366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256a7525ffa423830800000000000000
+      internalID: 4049381475418089042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 480
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f10d1d5eecb21970800000000000000
+      internalID: 8724243160120492535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_10
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 480
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88278092d834b3780800000000000000
+      internalID: -8702287581405482360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_11
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 480
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe75e8179e5081b10800000000000000
+      internalID: 1952316938655782895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6ec655bede0e1430800000000000000
+      internalID: 3755455488961465966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_13
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 240
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41be70b30e9530c0800000000000000
+      internalID: -4596594105978539700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_14
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 240
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 061530841557e9600800000000000000
+      internalID: 476947602508829024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_15
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 240
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090fd09e264276540800000000000000
+      internalID: 5001005918453624976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce8b361f6f51ab90800000000000000
+      internalID: -7232394595861295421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_17
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 210
+        height: 240
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b755d8d4d53ed10800000000000000
+      internalID: 2153667634478283557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: firesale_scientist_spritesheet2_18
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 210
+        height: 240
+      alignment: 9
+      pivot: {x: 0.5, y: 0.04}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33eb91ac74466ac0800000000000000
+      internalID: -3862324328345640131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cf4f8d532c380f8499e266cbb63c9998
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      firesale_scientist_spritesheet2_0: -3115567590169415914
+      firesale_scientist_spritesheet2_1: -8443982372485447619
+      firesale_scientist_spritesheet2_10: -8702287581405482360
+      firesale_scientist_spritesheet2_11: 1952316938655782895
+      firesale_scientist_spritesheet2_12: 3755455488961465966
+      firesale_scientist_spritesheet2_13: -4596594105978539700
+      firesale_scientist_spritesheet2_14: 476947602508829024
+      firesale_scientist_spritesheet2_15: 5001005918453624976
+      firesale_scientist_spritesheet2_16: -7232394595861295421
+      firesale_scientist_spritesheet2_17: 2153667634478283557
+      firesale_scientist_spritesheet2_18: -3862324328345640131
+      firesale_scientist_spritesheet2_2: 4028184816058605815
+      firesale_scientist_spritesheet2_3: -2382055853853975163
+      firesale_scientist_spritesheet2_4: -7566144332459149753
+      firesale_scientist_spritesheet2_5: 5337588397016243810
+      firesale_scientist_spritesheet2_6: -3866674744298877249
+      firesale_scientist_spritesheet2_7: 6490135003843453366
+      firesale_scientist_spritesheet2_8: 4049381475418089042
+      firesale_scientist_spritesheet2_9: 8724243160120492535
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
