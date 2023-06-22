@@ -1,14 +1,26 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class Cutscene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string[] dialogueLines;
+    public char[] characterIndicators;
+    public Sprite[] characterSprite;
+
+    private int _nextPosition;
+
+    private TextMeshProUGUI _dialogueTextBox;
+
     private void Start()
     {
+        _dialogueTextBox = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void ParseNextLine()
     {
+        var nextLine = dialogueLines[_nextPosition];
+        _dialogueTextBox.text = dialogueLines[_nextPosition];
+
     }
 }
