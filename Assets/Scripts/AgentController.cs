@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class AgentController : MonoBehaviour
 {
@@ -43,6 +45,14 @@ public class AgentController : MonoBehaviour
 
         // Instantiate AnimationStateController
         _animationStateController = new AnimationStateController(gameObject.GetComponent<Animator>());
+    }
+
+    private void Start()
+    {
+        // Destroy self if spawn is in invalid location
+        if (_navMeshAgent.isOnNavMesh) return;
+        throw new Exception("Invalid spawn location");
+        Destroy(gameObject);
     }
 
     private void Update()
