@@ -118,5 +118,6 @@ public class AgentController : MonoBehaviour
         _playerSpotted = true;
         _playerTransform = e.TargetPlayer.transform;
         _navMeshAgent.speed = activeSpeed;
+        _animationStateController.SetHoldingState(true);
     }
 }
