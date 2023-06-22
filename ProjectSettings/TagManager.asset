@@ -7,6 +7,7 @@ TagManager:
   - Keycard
   - ElevatorSummon
   - ElevatorDown
+  - TimeGun
   layers:
   - Default
   - TransparentFX

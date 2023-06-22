@@ -21,7 +21,8 @@ public class AreaManager : MonoBehaviour
         // because we don't know how many agents there will be
 
         // Gather all agents in this area
-        var agentsInRoom = Physics2D.OverlapBoxAll((Vector2)transform.position + _boxCollider2D.offset, _boxCollider2D.size, 0, agentLayerMask);
+        var agentsInRoom = Physics2D.OverlapBoxAll((Vector2)transform.position + _boxCollider2D.offset,
+            _boxCollider2D.size, 0, agentLayerMask);
 
         // Subscribe all of them to the event that will be triggered when the player enters
         // this saves many GetComponentInParent calls during gameplay which could cause a lag spike
