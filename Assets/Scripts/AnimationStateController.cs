@@ -8,6 +8,7 @@ public class AnimationStateController
     private static readonly int AnimatorDirection = Animator.StringToHash("Direction");
     private static readonly int AnimatorHolding = Animator.StringToHash("Holding");
     private static readonly int AnimatorRunning = Animator.StringToHash("Running");
+    private static readonly int AnimatorWalking = Animator.StringToHash("Walking");
 
     // Animator component on GameObject
     private readonly Animator _animator;
@@ -50,6 +51,7 @@ public class AnimationStateController
             // Update flags in animator to reflect changes
             if (changedFlags.HasFlag(State.Holding)) _animator.SetBool(AnimatorHolding, value.HasFlag(State.Holding));
             if (changedFlags.HasFlag(State.Running)) _animator.SetBool(AnimatorRunning, value.HasFlag(State.Running));
+            if (changedFlags.HasFlag(State.Walking)) _animator.SetBool(AnimatorWalking, value.HasFlag(State.Walking));
             // Save the new State
             _state = value;
         }
@@ -61,10 +63,20 @@ public class AnimationStateController
         _animator.SetInteger(AnimatorCurrentDirection, _animator.GetInteger(AnimatorDirection));
     }
 
-    public void SetRunningState(bool running)
+    public void SetHoldingState(bool holding)
     {
         // Enable / disable Running flag based on input bool
-        CurrentState = running ? CurrentState | State.Running : CurrentState & ~State.Running;
+        CurrentState = holding ? CurrentState | State.Holding : CurrentState & ~State.Holding;
+    }
+
+    public void SetRunningState(bool running, bool slow = false)
+    {
+        // Enable / disable Walking flag based on input bool
+        if (slow)
+            CurrentState = running ? CurrentState | (State.Walking & ~State.Running) : CurrentState & ~State.Walking;
+        // Enable / disable Running flag based on input bool
+        else
+            CurrentState = running ? CurrentState | (State.Running & ~State.Walking) : CurrentState & ~State.Running;
     }
 
     public void SetMovementDirection(Vector2 movementVector2)
@@ -92,6 +104,7 @@ public class AnimationStateController
     private enum State
     {
         Running = 1,
-        Holding = 2
+        Holding = 2,
+        Walking = 4
     }
 }

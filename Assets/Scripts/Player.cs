@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     // Actions wrapper instance field (instantiated on Enable)
     private GameActions _actions;
-    
+
     // AnimationStateController (instantiated on Awake)
     private AnimationStateController _animationStateController;
 
